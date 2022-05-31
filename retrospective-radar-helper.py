@@ -2,6 +2,7 @@ import requests
 import json
 import math
 import pandas as pd
+pd.set_option( "display.max_colwidth", None )
 
 
 def listWidgets( mural_id, auth_token, next_token ):
