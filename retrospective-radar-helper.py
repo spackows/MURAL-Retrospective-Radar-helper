@@ -2,7 +2,6 @@ import requests
 import json
 import math
 import pandas as pd
-pd.set_option( "display.max_colwidth", None )
 
 
 def listWidgets( mural_id, auth_token, next_token ):
@@ -284,3 +283,7 @@ def resultsDataframe( radar_stickies ):
     df = pd.DataFrame( results, columns=[ "STICKY ID", "STARFISH INDEX", "STARFISH ZONE", "CIRCLE INDEX", "CIRCLE OF CONTROL", "TEXT" ] )
     return df
 
+
+def printRadarDf( df ):
+    with pd.option_context( "display.max_colwidth", None ):
+        display( df )
