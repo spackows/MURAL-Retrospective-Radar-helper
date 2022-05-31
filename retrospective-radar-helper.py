@@ -281,6 +281,7 @@ def resultsDataframe( radar_stickies ):
                           circles_titles_arr[ sticky["radar_circle_index"] ],
                           sticky["text"] ] )
     df = pd.DataFrame( results, columns=[ "STICKY ID", "STARFISH INDEX", "STARFISH ZONE", "CIRCLE INDEX", "CIRCLE OF CONTROL", "TEXT" ] )
+    df = df.sort_values( by = [ "CIRCLE INDEX", "STARFISH INDEX" ] )
     return df
 
 
